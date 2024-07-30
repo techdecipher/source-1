@@ -11,7 +11,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the application
-      # Copy all files from SourceArtifact2 to the current build folder
+      # Copy all files from SourceArtifact2 to current build folder
       - cp -r $CODEBUILD_SRC_DIR_SourceArtifact2/* .
   post_build:
     commands:
