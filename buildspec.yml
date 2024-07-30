@@ -8,6 +8,8 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the application...
+      # Copy index.html from SourceArtifact1 to the current build directory
+      - cp /codebuild/output/src1/index.html .
   post_build:
     commands:
       - echo Build completed on `date`
