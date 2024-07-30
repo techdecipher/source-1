@@ -13,12 +13,13 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the application
-      # Copy index.html from SourceArtifact2 to the current build directory
-      - cp $CODEBUILD_SRC_DIR_SourceArtifact2/index.html .
+      # Copy all files from SourceArtifact2 to the current build directory
+      - cp -r $CODEBUILD_SRC_DIR_SourceArtifact2/* .
   post_build:
     commands:
       - echo Build completed on `date`
       - mkdir -p output
+      # Copy only index.html on output directory 
       - cp index.html output/
 
 artifacts:
